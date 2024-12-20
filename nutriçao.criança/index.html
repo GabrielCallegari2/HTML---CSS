@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Transforme a alimentação do seu filho com nosso desafio nutricional especialmente desenvolvido para famílias.">
+    <title>Desafio Nutrição Infantil</title>
+    <style>
+        :root {
+            --primary-color: #FF6F61;
+            --secondary-color: #FFE5D9;
+            --hover-color: #E85A4F;
+            --active-color: #D9534F;
+            --background-light: #F7F7F7;
+            --background-highlight: #FFF9E5;
+            --text-color: #333;
+            --success-color: #388E3C;
+            
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        #hero {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            animation: fadeIn 2s ease-in-out;
+        }
+        #hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        #hero img {
+            margin-top: 1rem;
+            max-width: 80%;
+        }
+        #hero button {
+            padding: 1rem 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        #hero button:hover {
+            background-color: var(--hover-color);
+            transform: scale(1.06);
+        }
+        #hero button:active {
+            background-color: var(--active-color);
+            transform: scale(0.89);
+            color: var(--background-light);
+        }
+        #problema-solucao {
+            padding: 2rem;
+            background-color: var(--background-light);
+            animation: slideInLeft 1.5s ease-in-out;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        #problema-solucao h2 {
+            color: var(--primary-color);
+            width: 100%;
+        }
+        #problema-solucao img {
+            flex: 1;
+            margin: 1rem;
+        }
+        #problema-solucao div {
+            flex: 2;
+        }
+        #beneficios {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            animation: slideInRight 1.5s ease-in-out;
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+        }
+        #beneficios h2 {
+            color: var(--primary-color);
+            font-size: 36px;
+        }
+        #beneficios ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            font-size: 20px;
+        }
+        #beneficios ul li {
+            margin-bottom: 0.5rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+        #beneficios img {
+            margin-top: 1rem;
+            max-width: 100%;
+            border-radius: 10px;
+            width: 500px;
+        }
+        #depoimentos {
+            padding: 2rem;
+            background-color: #E8F5E9;
+            color: var(--text-color);
+        }
+        #depoimentos h2 {
+            color: var(--success-color);
+            animation: slideInUp 1.5s ease-in-out;
+        }
+        #depoimentos blockquote {
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: #FFF;
+            border-left: 5px solid var(--success-color);
+            font-style: italic;
+            animation: zoomIn 1s ease-in-out;
+        }
+        #depoimentos img {
+            margin-top: 1rem;
+        }
+        #desafio {
+            background-color: var(--secondary-color);
+            padding: 2rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+        #desafio h2 {
+            color: var(--primary-color);
+        }
+        #autoridade {
+            padding: 2rem;
+            background-color: var(--background-highlight);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        #autoridade img {
+            flex: 1;
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #autoridade div {
+            flex: 2;
+            max-width: 600px;
+        }
+        #autoridade h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        #autoridade p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        @media (max-width: 768px) {
+            #autoridade {
+                flex-direction: column;
+                text-align: center;
+            }
+            #autoridade img {
+                flex: none;
+                max-width: 80%;
+                margin: 0 auto;
+            }
+            #autoridade div {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            #autoridade h2 {
+                font-size: 1.5rem;
+            }
+            #autoridade p {
+                font-size: 1rem;
+            }
+        }
+        #cta-final {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            animation: fadeIn 2s ease-in-out;
+        }
+        #cta-final button {
+            padding: 1rem 2rem;
+            background-color: white;
+            color: var(--primary-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        #cta-final button:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.06);
+        }
+        #cta-final button:active {
+            background-color: var(--active-color);
+            transform: scale(0.89);
+            color: var(--background-light);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Seção 1: Herói da Página -->
+    <section id="hero">
+        <h1>Transforme a Alimentação do Seu Filho em 30 Dias com o Nosso Desafio Especial!</h1>
+        <p>Aprenda estratégias comprovadas para vencer a seletividade alimentar e criar hábitos saudáveis, sem estresse.</p>
+        
+        <button>Garanta Sua Vaga</button>
+    </section>
+
+    <!-- Seção 2: Problema e Solução -->
+    <section id="problema-solucao">
+        <img src="imagens/regeitando.jpg" alt="Criança rejeitando comida">
+        <div>
+            <h2>Seu Filho Enfrenta Desafios com a Alimentação?</h2>
+            <p>Se alimentar virou uma batalha? No desafio, você vai descobrir como tornar a alimentação mais saudável e prazerosa para todos.</p>
+            <h3>Como Resolvemos</h3>
+            <p>Através de orientações práticas, personalizadas e educativas, ajudamos a mudar hábitos alimentares de forma leve e eficaz.</p>
+        </div>
+    </section>
+
+    <!-- Seção 3: Benefícios -->
+    <section id="beneficios">
+        <div>
+            <h2>O que Você Ganha ao Participar?</h2>
+            <ul>
+                <strong>
+                    <li>Alimentação mais variada e nutritiva.</li>
+                    <br>
+                    <li>Diminuição da seletividade alimentar.</li>
+                    <br>
+                    <li>Material exclusivo e estratégias práticas.</li>
+                    <br>
+                    <li>Relacionamento mais tranquilo com a comida.</li>
+                 
+                </strong>
+                
+            </ul>
+
+            <img src="imagens/prato.jpg" alt="Prato colorido e nutritivo">
+        </div>
+        
+        
+    </section>
+
+    <!-- Seção 4: Depoimentos -->
+    <section id="depoimentos">
+        <h2>Histórias de Sucesso</h2>
+        <blockquote>
+            <p>"Participar desse desafio mudou nossa rotina alimentar! Meu filho agora experimenta novos alimentos com alegria."</p>
+            <cite>- Ana, mãe do Pedro</cite>
+        </blockquote>
+        <blockquote>
+            <p>"Nunca pensei que seria tão fácil aplicar essas estratégias. Recomendo para todos os pais!"</p>
+            <cite>- João, pai da Sofia</cite>
+        </blockquote>
+       
+    </section>
+
+    <!-- Seção 5: O Desafio -->
+    <section id="desafio">
+        <h2>Como Funciona o Desafio</h2>
+        <p>Duração: 30 dias</p>
+        <p>Formato: Vídeos, materiais exclusivos e suporte em grupo.</p>
+        <p>Investimento: R$ 199,00</p>
+        <p>Bônus: Acesso a um grupo exclusivo de pais e um e-book com receitas saudáveis.</p>
+    </section>
+
+    <!-- Seção 6: Autoridade e Prova Social -->
+    <section id="autoridade">
+        <img src="imagens/nutricionista.jpg" alt="Nutricionista explicando">
+        <div>
+            <h2>Sobre Mim</h2>
+            <p>Com mais de 10 anos de experiência em nutrição infantil, já ajudei centenas de famílias a transformar a relação com a comida.</p>
+            <p>Já participei de programas como Bem Estar, compartilhando dicas práticas para alimentação saudável.</p>
+        </div>
+    </section>
+
+    <!-- Seção 7: Call-to-Action Final -->
+    <section id="cta-final">
+        <h2>Não Perca Essa Oportunidade!</h2>
+        <p>Garanta sua vaga hoje! As inscrições são limitadas.</p>
+        <button>Quero Participar Agora!</button>
+    </section>
+</body>
+</html>
